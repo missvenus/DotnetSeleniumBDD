@@ -23,6 +23,7 @@ public class LoginPage
 
     public void Login(string email, string password)
     {
+        _wait.Until(ExpectedConditions.ElementToBeClickable(_signInButton)).Click();
         _wait.Until(ExpectedConditions.ElementIsVisible(_emailField)).SendKeys(email);
         _wait.Until(ExpectedConditions.ElementToBeClickable(_continueButton)).Click();
         _wait.Until(ExpectedConditions.ElementIsVisible(_passwordField)).SendKeys(password);

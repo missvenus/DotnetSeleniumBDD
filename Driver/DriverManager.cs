@@ -12,7 +12,7 @@ public static class DriverManager
     public static IWebDriver GetDriver(string browserName)
     {
         ChromeOptions options = new ChromeOptions();
-        options.AddArgument("--headless"); 
+        //options.AddArgument("--headless"); 
         if (_driver == null)
         {
             switch (browserName.ToLower())
