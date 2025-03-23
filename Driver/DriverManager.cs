@@ -11,12 +11,14 @@ public static class DriverManager
 
     public static IWebDriver GetDriver(string browserName)
     {
+        ChromeOptions options = new ChromeOptions();
+        options.AddArgument("--headless"); 
         if (_driver == null)
         {
             switch (browserName.ToLower())
             {
                 case "chrome":
-                    _driver = new ChromeDriver();
+                    _driver = new ChromeDriver(options);
                     break;
                 case "firefox":
                     _driver = new FirefoxDriver();
@@ -27,8 +29,9 @@ public static class DriverManager
                 default:
                     throw new ArgumentException("Invalid browser name. Supported browsers: Chrome, Firefox, Safari");
             }
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-            _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(5);
+            
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
+            _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
             _driver.Manage().Window.Maximize();
         }
 
