@@ -9,8 +9,10 @@ public static class CommonUtils
     public static Dictionary<string, string> GetSignCredentials(string scenarioName="loginTest")
     {
         Dictionary<string, string> creds = new Dictionary<string, string>();
-        string email = Environment.GetEnvironmentVariable("AMAZON_EMAIL") ?? throw new ArgumentNullException("AMAZON_EMAIL not found");;
-        string password = Environment.GetEnvironmentVariable("AMAZON_PASSWORD") ?? throw new ArgumentNullException("AMAZON_PASSWORD not found");;
+        //string email = Environment.GetEnvironmentVariable("AMAZON_EMAIL") ?? throw new ArgumentNullException("AMAZON_EMAIL not found");;
+        //string password = Environment.GetEnvironmentVariable("AMAZON_PASSWORD") ?? throw new ArgumentNullException("AMAZON_PASSWORD not found");;
+        string email = "missvenus.jain@gmail.com";
+        string password = "password";
         if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
         {
             throw new Exception("Missing credentials in GitHub Secrets.");

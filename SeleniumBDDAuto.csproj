@@ -30,6 +30,10 @@
   </ItemGroup>
 
   <PropertyGroup>
+     <TestFramework>NUnit</TestFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <OutputPath>$(SolutionDir)bin\Debug\net9.0\</OutputPath>
   </PropertyGroup>
 
