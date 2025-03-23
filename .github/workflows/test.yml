@@ -11,7 +11,11 @@ on:
 jobs:
   test:
     runs-on: windows-latest
-
+    
+    env:
+      AMAZON_EMAIL: ${{ secrets.AMAZON_EMAIL }}
+      AMAZON_PASSWORD: ${{ secrets.AMAZON_PASSWORD }}
+      
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
@@ -19,7 +23,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '6.0.x' # or '7.0.x' based on your project
+          dotnet-version: '9.0.x' # or '7.0.x' based on your project
 
       - name: Restore Dependencies
         run: dotnet restore

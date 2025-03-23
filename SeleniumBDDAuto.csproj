@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <Nullable>disable</Nullable>
+    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <IsPackable>false</IsPackable>
     <OutputType>Library</OutputType>
@@ -28,5 +28,9 @@
   <ItemGroup>
     <Folder Include="Reports\" />
   </ItemGroup>
+
+  <PropertyGroup>
+    <OutputPath>$(SolutionDir)bin\Debug\net9.0\</OutputPath>
+  </PropertyGroup>
 
 </Project>
